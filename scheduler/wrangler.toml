@@ -1,0 +1,16 @@
+name = "scheduler"
+main = "src/index.js"
+compatibility_date = "2026-01-30"
+
+[durable_objects]
+bindings = [
+  { name = "TICKER", class_name = "Ticker" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["Ticker"]
+
+[[services]]
+binding = "RUNNER"
+service = "runner"
