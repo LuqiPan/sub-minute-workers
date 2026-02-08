@@ -2,15 +2,16 @@ name = "scheduler"
 main = "src/index.js"
 compatibility_date = "2026-01-30"
 
-[durable_objects]
-bindings = [
-  { name = "TICKER", class_name = "Ticker" }
-]
+[observability]
+enabled = true
 
-[[migrations]]
-tag = "v1"
-new_classes = ["Ticker"]
+[triggers]
+crons = ["* * * * *"]
 
 [[services]]
 binding = "RUNNER"
 service = "runner"
+
+[[migrations]]
+tag = "<v2>"
+deleted_classes = [ "Ticker" ]

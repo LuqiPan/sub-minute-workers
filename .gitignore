@@ -10,6 +10,7 @@ node_modules/
 
 # Yarn v4
 .yarn/install-state.gz
+**/.yarn/install-state.gz
 .yarn/unplugged/
 
 # Logs
