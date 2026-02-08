@@ -5,6 +5,11 @@ compatibility_date = "2026-01-30"
 [observability]
 enabled = true
 
+[durable_objects]
+bindings = [
+  { name = "TICKER", class_name = "Ticker" }
+]
+
 [triggers]
 crons = ["* * * * *"]
 
@@ -13,5 +18,5 @@ binding = "RUNNER"
 service = "runner"
 
 [[migrations]]
-tag = "<v2>"
-deleted_classes = [ "Ticker" ]
+tag = "v4"
+new_sqlite_classes = ["Ticker"]
