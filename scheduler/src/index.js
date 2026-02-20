@@ -68,6 +68,7 @@ export class Ticker extends DurableObject {
     if (nextRemaining > 0) {
       await this.ctx.storage.setAlarm(Date.now() + INTERVAL_MS);
     } else {
+      await this.ctx.storage.deleteAlarm();
       await this.ctx.storage.deleteAll();
     }
   }
