@@ -18,5 +18,5 @@ binding = "RUNNER"
 service = "runner"
 
 [[migrations]]
-tag = "v4"
+tag = "v6"
 new_sqlite_classes = ["Ticker"]
